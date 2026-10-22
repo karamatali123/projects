@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #101114;
+  --paper: #f3efe6;
+  --mist: #a39e93;
+  --panel: #191b22;
+  --stroke: rgba(243, 239, 230, 0.14);
+  --correct: #2f9e6b;
+  --present: #d2ad3c;
+  --absent: #3c4250;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-mist: var(--mist);
+  --color-panel: var(--panel);
+  --color-stroke: var(--stroke);
+  --color-correct: var(--correct);
+  --color-present: var(--present);
+  --color-absent: var(--absent);
+}
+
+html,
+body {
+  background: var(--ink);
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--correct) 35%, transparent);
+  color: var(--paper);
+}
+
+.tile-correct {
+  background: var(--correct);
+  color: var(--paper);
+}
+
+.tile-present {
+  background-color: var(--present);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 5px,
+    rgba(0, 0, 0, 0.16) 5px,
+    rgba(0, 0, 0, 0.16) 7px
+  );
+  color: #241c08;
+}
+
+.tile-absent {
+  background: var(--absent);
+  color: var(--paper);
+}
+
+.tile-empty {
+  border: 2px solid var(--stroke);
+  background: transparent;
+  color: var(--paper);
+}
+
+.tile-active {
+  border-color: color-mix(in srgb, var(--paper) 55%, transparent);
+}
+
+.tile:focus-visible,
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--paper);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

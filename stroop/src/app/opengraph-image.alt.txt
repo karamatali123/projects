@@ -1,0 +1,1 @@
+Wordle Solver. Mark green, yellow, and gray feedback to find possible words.
