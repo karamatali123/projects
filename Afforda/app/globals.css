@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fff6ee;
+  --foreground: #15324a;
+  --card: #ffffff;
+  --card-foreground: #15324a;
+  --muted: #f7efe6;
+  --muted-foreground: #5c6b78;
+  --border: #ead9c8;
+  --navy: #15324a;
+  --navy-foreground: #fff8f2;
+  --primary: #0c7a6e;
+  --primary-foreground: #ffffff;
+  --primary-soft: #d8f3ee;
+  --secondary: #e26a3d;
+  --secondary-foreground: #ffffff;
+  --secondary-soft: #fde6dc;
+  --accent: #0c7a6e;
+  --accent-foreground: #ffffff;
+  --ring: #0c7a6e;
+  --danger: #c2413b;
+  --warning: #c4841d;
+  --result: #15324a;
+  --shadow: 0 1px 2px rgb(21 50 74 / 0.06), 0 10px 28px rgb(12 122 110 / 0.08);
+  --shadow-hover: 0 12px 32px rgb(12 122 110 / 0.16), 0 4px 10px rgb(226 106 61 / 0.12);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-navy: var(--navy);
+  --color-navy-foreground: var(--navy-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary-soft: var(--secondary-soft);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-ring: var(--ring);
+  --color-danger: var(--danger);
+  --color-warning: var(--warning);
+  --color-result: var(--result);
+  --font-sans: var(--font-source-sans);
+  --font-serif: var(--font-source-serif);
+  --shadow-card: var(--shadow);
+  --shadow-hover: var(--shadow-hover);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(1200px 420px at 8% -10%, rgb(12 122 110 / 0.14), transparent 55%),
+    radial-gradient(900px 380px at 100% 0%, rgb(226 106 61 / 0.14), transparent 50%),
+    var(--background);
+  color: var(--foreground);
+  font-family: var(--font-source-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+.font-serif {
+  font-family: var(--font-source-serif), ui-serif, Georgia, serif;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--secondary) 28%, white);
+  color: var(--navy);
+}
+
+summary {
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
