@@ -43,9 +43,9 @@ export const metadata: Metadata = {
       "Mark green, yellow, and gray feedback to filter possible answers and rank useful next guesses.",
   },
   robots: indexable ? { index: true, follow: true } : { index: false, follow: false },
-  ...(process.env.GOOGLE_SITE_VERIFICATION
-    ? { verification: { google: process.env.GOOGLE_SITE_VERIFICATION } }
-    : {}),
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION || "-3JY0T7WhKfL5SRSAc1jOhCRx9u5u420U6YMMSSXAFQ",
+  },
 };
 
 export const viewport: Viewport = {
